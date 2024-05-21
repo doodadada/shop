@@ -117,7 +117,7 @@ select pseq, name, price2, image from product  where bestyn='Y'  order by indate
 
 
 
-
+SELECT * FROM product WHERE kind=4;
 
 
 

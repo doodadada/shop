@@ -9,7 +9,7 @@
 <!-- 신상품 -->
 <div id="NewItem">
 	<h2>New Item</h2>   
-	<div class="products">
+	<div class="products">	
 		<c:forEach items="${newList}"  var="productVO" varStatus="status">
 				<c:choose>
 					<c:when test="${status.index==0}">
@@ -22,12 +22,12 @@
 				</c:choose>
 						<div id="item">
 								<div>
-										<a href="productDetail?pseq=${productVO.pseq}">
+										<a href="shop.do?command=productDetail?pseq=${productVO.pseq}">
 												<img src="product_images/${productVO.image}" />
 										</a>
 								</div>
 								<div>
-										<a href="productDetail?pseq=${productVO.pseq}">
+										<a href="shop.do?command=productDetail?pseq=${productVO.pseq}">
 										 		${productVO.name} - 
 										 		<fmt:formatNumber value="${productVO.price2}" type="currency" />
 										</a>
@@ -62,12 +62,12 @@
 				</c:choose>
 						<div id="item">
 								<div>
-										<a href="productDetail?pseq=${productVO.pseq}">
+										<a href="shop.do?command=productDetail?pseq=${productVO.pseq}">
 												<img src="product_images/${productVO.image}" />
 										</a>
 								</div>
 								<div>
-										<a href="productDetail?pseq=${productVO.pseq}">
+										<a href="shop.do?command=productDetail?pseq=${productVO.pseq}">
 										 		${productVO.name} - 
 										 		<fmt:formatNumber value="${productVO.price2}" type="currency" />
 										</a>
