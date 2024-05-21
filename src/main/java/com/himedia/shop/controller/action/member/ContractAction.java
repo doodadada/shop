@@ -8,12 +8,12 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class LoginFormAction implements Action {
+public class ContractAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.getRequestDispatcher("member/loginForm.jsp").forward(request, response);
+		request.getRequestDispatcher("member/contract.jsp").forward(request, response);
 
 	}
 

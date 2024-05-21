@@ -1,15 +1,20 @@
 package com.himedia.shop.dto;
 
+import java.sql.Timestamp;
+
 public class MemberVO {
+
 	private String userid;
-	private String pwd;
-	private String name;
-	private String zip_num;
-	private String address1;
-	private String address2;
-	private String phone;
-	private String useyn;
-	private String indate;
+    private String pwd;     
+    private String name;
+    private String email;
+    private String zip_num;
+    private String address1;
+    private String address2;
+    private String phone;
+    private String useyn;
+    private Timestamp indate;
+    
 	public String getUserid() {
 		return userid;
 	}
@@ -27,6 +32,12 @@ public class MemberVO {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getZip_num() {
 		return zip_num;
@@ -58,13 +69,12 @@ public class MemberVO {
 	public void setUseyn(String useyn) {
 		this.useyn = useyn;
 	}
-	public String getIndate() {
+	public Timestamp getIndate() {
 		return indate;
 	}
-	public void setIndate(String indate) {
+	public void setIndate(Timestamp indate) {
 		this.indate = indate;
 	}
-	
-	
-	
+    
+    
 }

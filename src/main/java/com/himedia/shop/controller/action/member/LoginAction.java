@@ -9,24 +9,33 @@ import com.himedia.shop.dto.MemberVO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 public class LoginAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String userid=request.getParameter("userid");
+		
+		String userid= request.getParameter("userid");
 		String pwd=request.getParameter("pwd");
 		
-		MemberDao mdao=MemberDao.getInstance();
+		MemberDao mdao = MemberDao.getInstance();
 		MemberVO mvo = mdao.getMember(userid);
 		
-		if(mvo ==null) {
-			
-		}else if(!mvo.getPwd().equals(pwd)) {
-			
-		}else if(mvo.getPwd().equals(pwd)) {
-			
-		}
+		String url = "member/loginForm.jsp";
+		if( mvo == null ) 
+			request.setAttribute("message", "아이디가 없습니다");
+		else if( !mvo.getPwd().equals(pwd) ) 
+			request.setAttribute("message", "패스워드가 틀립니다");
+		else if( mvo.getPwd().equals(pwd) ) {
+			url = "shop.do?command=index";
+			HttpSession session = request.getSession();
+			session.setAttribute("loginUser", mvo);
+		}else 
+			request.setAttribute("message", "관리자에게 문의하세요");
+		
+		request.getRequestDispatcher(url).forward(request, response);
+
 	}
 
 }

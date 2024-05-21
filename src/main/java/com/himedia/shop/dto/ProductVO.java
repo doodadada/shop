@@ -4,17 +4,17 @@ import java.sql.Timestamp;
 
 public class ProductVO {
 	private Integer pseq;
-	private String name;
-	private String kind;
-	private Integer price1;
-	private Integer price2;
-	private Integer price3;
-	private String content;
-	private String image;
-	private String useyn;
-	private String bestyn;
-	private Timestamp indate;
-	
+    private String name;
+    private String kind;   
+    private Integer price1;
+    private Integer price2;
+    private Integer price3;
+    private String content;
+    private String image;
+    private String useyn;
+    private String bestyn;
+    private Timestamp indate;
+    
 	public Integer getPseq() {
 		return pseq;
 	}
@@ -81,16 +81,6 @@ public class ProductVO {
 	public void setIndate(Timestamp indate) {
 		this.indate = indate;
 	}
-	@Override
-	public String toString() {
-		return "ProductVO [pseq=" + pseq + ", name=" + name + ", kind=" + kind + ", price1=" + price1 + ", price2="
-				+ price2 + ", price3=" + price3 + ", content=" + content + ", image=" + image + ", useyn=" + useyn
-				+ ", bestyn=" + bestyn + ", indate=" + indate + "]";
-	}
-	
-	
-	
-	
+    
+    
 }
-
-
