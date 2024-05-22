@@ -36,8 +36,8 @@
 									</c:otherwise>
 							</c:choose>
 							<a href="shop.do?command=cartList">CART</a>
-							<a href="">MY PAGE</a>
-							<a href="">고객센터</a>
+							<a href="shop.do?command=mypage">MY PAGE</a>
+							<a href="shop.do?command=qnaList">고객센터</a>
 							
 					</div>
 					<div class="hmenu"><div></div>	<div></div>	<div></div> 	</div>

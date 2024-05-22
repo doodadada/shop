@@ -46,8 +46,9 @@ public class OrderDao {
 		try {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, userid);
-			rs=pstmt.executeQuery();
-			if(rs.next()) oseq = rs.getInt("moseq");
+			rs = pstmt.executeQuery();
+			if (rs.next())
+				oseq = rs.getInt("moseq");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -79,8 +80,8 @@ public class OrderDao {
 		try {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, oseq);
-			rs=pstmt.executeQuery();
-			while(rs.next()) {
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
 				OrderVO ovo = new OrderVO();
 				ovo.setOdseq(rs.getInt("odseq"));
 				ovo.setOseq(rs.getInt("oseq"));
@@ -121,10 +122,49 @@ public class OrderDao {
 		} finally {
 			Db.close(con, pstmt, rs);
 		}
-		
+
 	}
 
-	
+	public ArrayList<Integer> selectOseqOrderIng(String userid) {
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		con = Db.getConnection();
+		String sql = "SELECT DISTINCT oseq FROM order_view WHERE userid=? AND result='1' ORDER BY oseq DESC";
+		int oseq = 0;
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, userid);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				OrderVO ovo = new OrderVO();
+				list.add(rs.getInt("oseq"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			Db.close(con, pstmt, rs);
+		}
+		return list;
+	}
 
-	
+	public ArrayList<Integer> selectOseqOrderAll(String userid) {
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		con = Db.getConnection();
+		String sql = "SELECT DISTINCT oseq FROM order_view WHERE userid=? ORDER BY oseq DESC";
+		int oseq = 0;
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, userid);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				OrderVO ovo = new OrderVO();
+				list.add(rs.getInt("oseq"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			Db.close(con, pstmt, rs);
+		}
+		return list;
+	}
+
 }
