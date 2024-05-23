@@ -4,8 +4,8 @@ public class Paging {
 	
 	private int page = 1; // 현재 화면에 보여질 페이지
 	private int totalCount; // 전체 게시물의 갯수(레코드 갯수)
-	private int displayRow = 5; // 한 화면에 보여질 게시물 갯수
-	private int displayPage = 5; // 한 화면에 보여질 페이지 갯수
+	private int displayRow = 10; // 한 화면에 보여질 게시물 갯수
+	private int displayPage = 10; // 한 화면에 보여질 페이지 갯수
 	private int beginPage; // 현재 화면에 표시된 페이지의 시작 번호
 	private int endPage; // 현재 화면에 표시된 페이지의 끝 번호
 	private boolean prev; // prev 버튼이 보일건지 안보일건지(true/false)

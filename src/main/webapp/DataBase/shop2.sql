@@ -125,11 +125,17 @@ UPDATE order_detail SET result = '2' WHERE odseq in(5,6);
 
 UPDATE member SET useyn='Y' WHERE userid='test';
 
+-- admin 관리자 계정 입력
+INSERT INTO admins VALUES('admin', 'admin', '관리자', '010-7777-7777');
+INSERT INTO admins VALUES('scott', '1234', '홍길동', '010-4646-6464');
 
+SELECT * FROM admins;
 
-
+commit
 
 SELECT * FROM product WHERE kind=4;
 
 
 SELECT * FROM qna ORDER BY qseq DESC;
+
+SELECT * FROM admins WHERE adminid='admin';

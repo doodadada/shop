@@ -1,17 +1,19 @@
 package com.himedia.shop.controller;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 import com.himedia.shop.controller.action.Action;
 
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
 /**
  * Servlet implementation class ShoesShopServlet
  */
+@MultipartConfig(fileSizeThreshold=1024*1024, maxFileSize = 1024*1024*5, maxRequestSize=1024*1024*5*5)
 public class ShoesShopServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -20,7 +22,6 @@ public class ShoesShopServlet extends HttpServlet {
      */
     public ShoesShopServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**

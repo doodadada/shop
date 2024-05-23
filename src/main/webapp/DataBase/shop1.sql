@@ -155,5 +155,17 @@ ALTER TABLE order_detail
 	ON DELETE RESTRICT
 ;
 
+--admin 테이블 생성
+CREATE TABLE admins
+(
+	adminid varchar(30) NOT NULL,
+	pwd varchar(30) NOT NULL,
+	name varchar(30) NOT NULL,
+	phone varchar(30) NOT NULL,
+	PRIMARY KEY (adminid)
+);
+
+SELECT * FROM admins;
+
 
 

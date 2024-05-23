@@ -97,10 +97,10 @@ public class ProductDao {
 				pvo.setPrice1( rs.getInt("price1") );
 				pvo.setPrice2( rs.getInt("price2") );
 				pvo.setPrice3( rs.getInt("price3") );
-				pvo.setImage( rs.getString("content") );
+				pvo.setContent( rs.getString("content") );
 				pvo.setImage( rs.getString("image") );
-				pvo.setImage( rs.getString("useyn") );
-				pvo.setImage( rs.getString("bestyn") );
+				pvo.setUseyn( rs.getString("useyn") );
+				pvo.setBestyn( rs.getString("bestyn") );
 				pvo.setIndate( rs.getTimestamp("indate") );
 				pvo.setSavefilename(rs.getString("savefilename"));
 			}

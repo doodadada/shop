@@ -37,6 +37,8 @@ public class QnaListAction implements Action {
 //				session.removeAttribute("page");
 //			}
 			paging.setPage(page); // 결정된 page값을 객체의 해당 멤버변수에 저장합니다.
+			paging.setDisplayRow(5);
+			paging.setDisplayPage(5);
 			// 1. 페이지 구성요소들을 계산하기 위해 총 레코드 갯수부터 조회
 			int count = qdao.getAllCount();
 			System.out.println("레코드 갯수 : "+count);

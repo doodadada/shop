@@ -2,6 +2,13 @@ package com.himedia.shop.controller;
 
 import com.himedia.shop.controller.action.Action;
 import com.himedia.shop.controller.action.IndexAction;
+import com.himedia.shop.controller.action.admin.AdminAction;
+import com.himedia.shop.controller.action.admin.AdminProductDetailAction;
+import com.himedia.shop.controller.action.admin.AdminProductListAction;
+import com.himedia.shop.controller.action.admin.AdminProductUpdateFormAction;
+import com.himedia.shop.controller.action.admin.AdminProductWriteAction;
+import com.himedia.shop.controller.action.admin.AdminProductWriteFormAction;
+import com.himedia.shop.controller.action.admin.AdminloginAction;
 import com.himedia.shop.controller.action.customer.QnaListAction;
 import com.himedia.shop.controller.action.customer.QnaViewAction;
 import com.himedia.shop.controller.action.customer.WriteQnaAction;
@@ -71,6 +78,15 @@ public class ActionFactory {
 		else if( command.equals("qnaView") ) ac = new QnaViewAction();
 		else if( command.equals("writeQnaForm") ) ac = new WriteQnaFormAction();
 		else if( command.equals("writeQna") ) ac = new WriteQnaAction();
+		
+		// admin
+		else if( command.equals("admin") ) ac = new AdminAction();
+		else if( command.equals("adminlogin") ) ac = new AdminloginAction();
+		else if( command.equals("adminProductList") ) ac = new AdminProductListAction();
+		else if( command.equals("adminProductDetail") ) ac = new AdminProductDetailAction();
+		else if( command.equals("adminProductWriteForm") ) ac = new AdminProductWriteFormAction();
+		else if( command.equals("adminProductWrite") ) ac = new AdminProductWriteAction();
+		else if( command.equals("adminProductUpdateForm") ) ac = new AdminProductUpdateFormAction();
 		
 		
 		return ac;
