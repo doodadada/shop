@@ -41,7 +41,7 @@
 					</div>
 					<div class="col">
 						<c:choose>
-							<c:when test="${productVO.useyn=='	N'}">미사용</c:when>
+							<c:when test="${productVO.useyn=='N'}">미사용</c:when>
 							<c:otherwise>사용</c:otherwise>
 						</c:choose>
 					</div>

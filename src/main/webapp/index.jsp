@@ -8,4 +8,4 @@
 <body>
 <% response.sendRedirect("shop.do?command=index"); %>
 </body>
-</html>	
+</html>

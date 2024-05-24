@@ -39,7 +39,7 @@
 		<div class="btn">
 				<input class="btn" type="button" value="상품등록" onClick="go_save()">
 				<input class="btn" type="button" value="목록" onClick="location.href='shop.do?command=adminProductList'">
-			</div>
+		</div>
 	</form>
 </article>
 

@@ -22,8 +22,8 @@ public class AdminProductUpdateFormAction implements Action {
 		String kindList[] = {"Heels", "Boots", "Sandals", "Snickers", "Slipers"};
 		request.setAttribute("kindList", kindList);
 		
-		int index = Integer.parseInt(pvo.getKind())-1;
-		request.setAttribute("kind", kindList[index]);
+//		int index = Integer.parseInt(pvo.getKind())-1;
+//		request.setAttribute("kind", kindList[index]);
 		
 		request.getRequestDispatcher("admin/product/productUpdate.jsp").forward(request, response);
 	}

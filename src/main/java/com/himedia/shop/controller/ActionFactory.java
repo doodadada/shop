@@ -3,11 +3,19 @@ package com.himedia.shop.controller;
 import com.himedia.shop.controller.action.Action;
 import com.himedia.shop.controller.action.IndexAction;
 import com.himedia.shop.controller.action.admin.AdminAction;
+import com.himedia.shop.controller.action.admin.AdminLogoutAction;
+import com.himedia.shop.controller.action.admin.AdminMemberListAction;
+import com.himedia.shop.controller.action.admin.AdminOrderListAction;
+import com.himedia.shop.controller.action.admin.AdminOrderSaveAction;
 import com.himedia.shop.controller.action.admin.AdminProductDetailAction;
 import com.himedia.shop.controller.action.admin.AdminProductListAction;
+import com.himedia.shop.controller.action.admin.AdminProductUpdateAction;
 import com.himedia.shop.controller.action.admin.AdminProductUpdateFormAction;
 import com.himedia.shop.controller.action.admin.AdminProductWriteAction;
 import com.himedia.shop.controller.action.admin.AdminProductWriteFormAction;
+import com.himedia.shop.controller.action.admin.AdminQnaDetailAction;
+import com.himedia.shop.controller.action.admin.AdminQnaListAction;
+import com.himedia.shop.controller.action.admin.AdminQnaReplyUpdateAction;
 import com.himedia.shop.controller.action.admin.AdminloginAction;
 import com.himedia.shop.controller.action.customer.QnaListAction;
 import com.himedia.shop.controller.action.customer.QnaViewAction;
@@ -82,13 +90,23 @@ public class ActionFactory {
 		// admin
 		else if( command.equals("admin") ) ac = new AdminAction();
 		else if( command.equals("adminlogin") ) ac = new AdminloginAction();
+		else if( command.equals("adminLogout") ) ac = new AdminLogoutAction();
 		else if( command.equals("adminProductList") ) ac = new AdminProductListAction();
 		else if( command.equals("adminProductDetail") ) ac = new AdminProductDetailAction();
 		else if( command.equals("adminProductWriteForm") ) ac = new AdminProductWriteFormAction();
 		else if( command.equals("adminProductWrite") ) ac = new AdminProductWriteAction();
 		else if( command.equals("adminProductUpdateForm") ) ac = new AdminProductUpdateFormAction();
+		else if( command.equals("adminProductUpdate") ) ac = new AdminProductUpdateAction();
 		
+		else if( command.equals("adminOrderList") ) ac = new AdminOrderListAction();
+		else if( command.equals("adminOrderSave") ) ac = new AdminOrderSaveAction();
+
+		else if( command.equals("adminMemberList") ) ac = new AdminMemberListAction();
 		
+		else if( command.equals("adminQnaList") ) ac = new AdminQnaListAction();
+		else if( command.equals("adminQnaDetail") ) ac = new AdminQnaDetailAction();
+		else if( command.equals("adminQnaReplyUpdate") ) ac = new AdminQnaReplyUpdateAction();
+
 		return ac;
 	}
 	
